@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import ViewerTemplate from "components/ViewerTemplate";
 import * as api from "./lib/api";
 import moment from "moment";
+import { ChasingDots } from "better-react-spinkit";
+import styles from "./styles.scss";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 class App extends Component {
   state = {
@@ -14,14 +19,10 @@ class App extends Component {
   };
 
   getAPOD(date) {
-    if (this.state.loading) {
-      return;
-    }
-
     this.setState({
+      ...this.state,
       loading: true
     });
-
     api
       .getAPOD(date)
       .then(response => response.data)
@@ -84,6 +85,14 @@ class App extends Component {
 
   render() {
     const { date, url, title, mediaType, loading } = this.state;
+
+    if (loading) {
+      return (
+        <div className={cx("loading")}>
+          <ChasingDots color="white" />
+        </div>
+      );
+    }
 
     return (
       <div className="App">

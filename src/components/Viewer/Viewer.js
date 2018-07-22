@@ -7,14 +7,12 @@ const cx = classNames.bind(styles);
 
 const Viewer = ({ url, title, mediaType, loading }) => {
   if (loading) {
-    console.log("loading...");
     return (
-      <div className={cx("viewer")}>
-        <ChasingDots />loading
+      <div className={cx("loading")}>
+        <ChasingDots color="white" />
       </div>
     );
   }
-
   if (!url) {
     return null;
   }
