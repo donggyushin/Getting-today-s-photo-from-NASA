@@ -5,8 +5,7 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 const SpaceNavigator = () => {
-  return;
-  <div className={cx("space-navigator")}>SpaceNavigator</div>;
+  return <div className={cx("space-navigator")}>SpaceNavigator</div>;
 };
 
 export default SpaceNavigator;
