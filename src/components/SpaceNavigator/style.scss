@@ -1,3 +1,35 @@
+@import "utils";
+
 .space-navigator{
+    width: 100%;
+    top:60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    position: absolute;
+    .end {
+
+        cursor: pointer;
+
+        font-size: 2rem;
+        &:hover {
+            color: antiquewhite;
+        }
+
+        &:active {
+            color: white;
+        }
+
+    }
+    .left {
+        position: relative;
+        left: -250px;
+    }
+    .right {
+        position: relative;
+        right: -250px;
+    }
+    
     
 }
