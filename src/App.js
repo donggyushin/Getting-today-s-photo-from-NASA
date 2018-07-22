@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ViewerTemplate from "./components/ViewerTemplate";
+import ViewerTemplate from "components/ViewerTemplate";
 import * as api from "./lib/api";
 import moment from "moment";
 
